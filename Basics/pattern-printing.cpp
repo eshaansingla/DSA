@@ -149,6 +149,6 @@ int main(){
   for(int i=0;i<inputs;i++){
     int n;
     cin>>n;
-    //function(n);
+    //enterDifferentFunctions(n);
   }
 }

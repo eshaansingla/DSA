@@ -81,7 +81,29 @@ using namespace std;
 //        cout << endl;
 //    }
 // }
-// void continuousletters(){
+// void  pasctributchars(int n){
+//   for(int i=0;i<n;i++){
+//         for(int j=0;j<n-i-1;j++){
+//             cout<<" ";
+//         }
+//         char ch='A';
+//         for(int j=0;j<(2*i+1);j++){
+//             if(j<(2*i+1)/2){
+//             cout<<ch<<" ";
+//             ch++;
+//             }
+//             else{
+//                cout<<ch<<" ";
+//             ch--; 
+//             }
+//         }
+//         for (int j = 0; j < n - i - 1; j++) {
+//             cout << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+// void continuousletters(int n){
 //    int a=n;
 //     for(int i=0;i<=n;i++){
 //         for(char j='A';j<'A'+a;j++){

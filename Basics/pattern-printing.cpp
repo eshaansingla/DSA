@@ -1,5 +1,39 @@
 #include<iostream>
 using namespace std;
+// void Sqaure(int n) {
+//     int spaces=0;
+//    for(int i=0;i<n;i++){
+//        if(i==0 || i==(n-1)){
+//           for(int j=0;j<n;j++){
+//               cout<<"*";
+//           }
+//    }
+//    else{
+//        for(int j=0;j<1;j++){
+//               cout<<"*";
+//           }
+//           for(int j=1;j<n-1;j++){
+//               cout<<" ";
+//           }
+//           for (int j = n - 1; j > n - 2; j--) {
+//               cout << "*";
+//           }
+//    }
+//    cout<<endl;
+//    }
+// }
+// void coolestofemall(int n) {
+//     for(int i=0;i<2*n-1;i++){
+//         for(int j=0;j<2*n-1;j++){
+//             int top=i;
+//             int left=j;
+//             int right=2*n-2-j;
+//             int down=2*n-2-i;
+//             cout<<n-min(min(top,down),min(left,right));
+//         }
+//         cout<<endl;
+//     }
+// }
 // void pattern6(int n){
 //   for(int i=1;i<=n;i++){
 //         for(int j=1;j<=i;j++){
@@ -101,6 +135,19 @@ using namespace std;
 //             cout << " ";
 //         }
 //         cout << endl;
+//     }
+// }
+// void ccbcba(int n){
+//   char ch='A';
+//     ch+=n-1;
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<=i;j++){
+//             cout<<ch<<" ";
+//             ch--;
+//         }
+//         ch='A';
+//         ch+=n-1;
+//         cout<<endl;
 //     }
 // }
 // void continuousletters(int n){

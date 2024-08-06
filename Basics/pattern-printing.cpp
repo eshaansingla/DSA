@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-// void pattern6(){
+// void pattern6(int n){
 //   for(int i=1;i<=n;i++){
 //         for(int j=1;j<=i;j++){
 //             cout<<j<<" ";
@@ -14,7 +14,7 @@ using namespace std;
 //         cout<<endl;
 //     }
 // }
-// void pattern5(){
+// void pattern5(int n){
 //   for(int i=0;i<n;i++){
 //        for(int l=0;l<(n-i-1);l++){
 //            cout<<" ";
@@ -40,7 +40,7 @@ using namespace std;
 //        cout << endl;
 //     }
 // }
-// void pattern4(){
+// void pattern4(int n){
 //    int s=1;
 //     for(int i=0;i<n;i++){
 //         if(i%2==0) s=1;
@@ -51,7 +51,7 @@ using namespace std;
 //     }
 //     cout<<endl;
 // }
-// void pattern3(){
+// void pattern3(int n){
 //    for(int i=0;i<n;i++){
 //        for (int l=1;l<=i;l++){
 //            cout<<"*";
@@ -67,7 +67,7 @@ using namespace std;
 
 // }
 
-// void pattern2(){
+// void pattern2(int n){
 //     for(int i=0;i<n;i++){
 //        for(int l=0;l<i;l++){
 //            cout<<" ";
@@ -81,7 +81,27 @@ using namespace std;
 //        cout << endl;
 //    }
 // }
-// void patternnum(){
+// void continuousletters(){
+//    int a=n;
+//     for(int i=0;i<=n;i++){
+//         for(char j='A';j<'A'+a;j++){
+//             cout<<j<<" ";
+//         }
+//         a--;
+//         cout<<endl;
+//     }
+// }
+// void letteredtriangles(int n) {
+//    char ch='A';
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<ch<<" ";
+//             ch++;
+//         }
+//         cout<<endl;
+//     }
+// }
+// void patternnum(int n){
 //    for(int i=n;i>=1;i--){
 // 			for(int j=1;j<=i;j++){
 // 				cout<<j<<" ";
@@ -89,7 +109,7 @@ using namespace std;
 // 			cout<<endl;
 // 		}
 // }
-// void pattern num2(){
+// void pattern num2(int n){
 // 	for(int i=1;i<=n;i++){
 // 			for(int j=1;j<=i;j++){
 // 				cout<<i<<" ";
@@ -97,7 +117,7 @@ using namespace std;
 // 			cout<<endl;
 // 		}
 // }
-// void starrev(){
+// void starrev(int n){
 //   	for(int i=0;i<n;i++){
 // 			for(int j=n;j>i;j--){
 // 				cout<<"* ";
@@ -105,7 +125,7 @@ using namespace std;
 // 			cout<<endl;
 // 		}
 // }
-// void first(){
+// void first(int n){
 // 	for(int i=0;i<n;i++){
 // 			for(int j=0;j<n;j++){
 // 				cout<<"* ";
@@ -113,12 +133,22 @@ using namespace std;
 // 			cout<<endl;
 // 		}
 // }
+// void cont(int n){
+// int sum=1;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<sum<<" ";
+//             sum++;
+//         }
+//         cout<<endl;
+//     }
+// }
 int main(){
   int inputs;
   cin>>inputs;
   for(int i=0;i<inputs;i++){
     int n;
     cin>>n;
-    //function();
+    //function(n);
   }
 }

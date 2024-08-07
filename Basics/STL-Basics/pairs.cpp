@@ -6,7 +6,7 @@ void pairs(){
 }
 void pairsmulti(){
     pair<int,pair<int,int>>p={1,{2,3}};
-     cout<<p.first<<" "<<p.second.first<<","<<p.second.second<<endl;
+     cout<<p.first<<endl<<p.second.first<<endl<<p.second.second<<endl;
 }
 void samplearray(){
     pair<int,char>p[]={{1,'a'},{3,'e'},{5,'s'}};

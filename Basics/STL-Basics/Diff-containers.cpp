@@ -105,4 +105,13 @@ int main() {
    cout<<q2.top()<<endl;
    cout<<q2.empty()<<endl;
    cout<<endl;
+   
+  set<int> s;
+  for(int i = 6; i < 15; i++) s.insert(i);
+  for(int i = 1; i < 12; i++) s.insert(i);
+  for(int it : s) cout << it << " ";
+  cout<<endl;
+
+   
+  return 0;
 }

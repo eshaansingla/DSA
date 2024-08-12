@@ -112,7 +112,7 @@ int main() {
   for(int it : s) cout << it << " ";
   cout<<endl;
 
-     multiset<int>ms;
+   multiset<int>ms;
    ms.emplace(1);
    ms.emplace(2);
    ms.emplace(3);
@@ -127,6 +127,14 @@ int main() {
    auto it1=ms.find(4);
    ms.erase(it,it1);
    for(auto it:ms) cout<<it<<endl;
+
+   map<int,int>mpp;
+   map<pair<int,int>,int>mpp2;
+   mpp[1]=2;
+   mpp2[{2,3}]=10;
+   for(auto it:mpp) cout<<it.first<<" "<<it.second<<endl;
+   for(auto it:mpp2) cout<<it.first.first<<" "<<it.first.second<<" "<<it.second<<endl;
+   cout<<endl;
    
   return 0;
 }

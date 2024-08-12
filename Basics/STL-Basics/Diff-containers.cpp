@@ -112,6 +112,21 @@ int main() {
   for(int it : s) cout << it << " ";
   cout<<endl;
 
+     multiset<int>ms;
+   ms.emplace(1);
+   ms.emplace(2);
+   ms.emplace(3);
+   ms.emplace(4);
+   ms.emplace(6);
+   ms.emplace(9);
+   ms.emplace(2);
+   ms.emplace(0);
+   for(auto it:ms) cout<<it<<endl;
+   cout<<endl;
+   auto it=ms.find(2);
+   auto it1=ms.find(4);
+   ms.erase(it,it1);
+   for(auto it:ms) cout<<it<<endl;
    
   return 0;
 }

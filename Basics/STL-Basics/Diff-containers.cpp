@@ -135,6 +135,20 @@ int main() {
    for(auto it:mpp) cout<<it.first<<" "<<it.second<<endl;
    for(auto it:mpp2) cout<<it.first.first<<" "<<it.first.second<<" "<<it.second<<endl;
    cout<<endl;
+
+    vector<int> v5;
+    v5.push_back(1);
+    vector<int> temp = {5, 2, 5, 5, 6, 9, 8, 7, 1, 2, 6, 52, 2, 0, 10};
+    v5.insert(v5.end(), temp.begin(), temp.end());
+
+    sort(v5.begin(), v5.end());
+
+    for(auto it : v5) cout << it << endl;
+   cout<<endl;
+   int maxi=*max_element(v5.begin(),v5.end());
+   cout<<maxi;
+   cout<<endl<<__builtin_popcount(5);
+    return 0;
    
   return 0;
 }

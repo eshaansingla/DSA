@@ -7,6 +7,10 @@ vector<int> reverseArray(int a[], int n) {
     }
     return b;
 }
+string reverseArray(string str) {
+    reverse(str.begin(), str.end());
+    return str;
+}
 
 int main() {
     int arr[] = {1, 5, 9, 2, 3, 4, 5, 6, 8, 7, 9, 5};
@@ -16,6 +20,11 @@ int main() {
     
     for(auto it : c) {
         cout << it << endl;
+
+     string arr="Eshaan Singla";
+    string ch = reverseArray(arr);
+    cout<<ch<<endl;
+    return 0;
     }
     
     return 0;

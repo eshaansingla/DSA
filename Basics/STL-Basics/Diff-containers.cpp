@@ -148,7 +148,21 @@ int main() {
    int maxi=*max_element(v5.begin(),v5.end());
    cout<<maxi;
    cout<<endl<<__builtin_popcount(5);
-    return 0;
+
+   string perm="69584";
+   sort(perm.begin(),perm.end());
+   do{
+      cout<<perm<<endl;
+   }while(next_permutation(perm.begin(),perm.end()));
+   cout<<endl;
+   do{
+      cout<<perm<<endl;
+   }while(next_permutation(perm.begin()+2,perm.end()));
+   cout<<endl;
+   do{
+      cout<<perm<<endl;
+   }while(next_permutation(perm.begin(),perm.end()-2));
+   cout<<endl;
    
   return 0;
 }

@@ -11,7 +11,7 @@ int main(){
     }
     int k=0;
     int cnt=0;
-    for(int j=1;j<n;j++){
+    for(int j=1;j<=n;j++){
         if(arr[k]!=arr[j]){
             arr[k+1]=arr[j];
             k++;

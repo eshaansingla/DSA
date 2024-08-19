@@ -17,7 +17,7 @@ int main(){
         cout<<"Enter value:";
         cin>>v1[i];
     }
-    set<int>st;
+ set<int>st;
     for(int i=0;i<n;i++){
         st.insert(v[i]);
 }

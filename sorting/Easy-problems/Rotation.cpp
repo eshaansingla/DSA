@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    /*int n;
+    /*
+    int n;
     cout<<"Enter number of elements:";
     cin>>n;
     int arr[n];
@@ -15,12 +16,12 @@ int main(){
     d=d%n;
     vector<int>temp;
     for(int i=0;i<d;i++){
-        temp[i]=arr[i];
+       temp.push_back(arr[i]);
     }
     for(int i=d;i<n;i++){
         arr[i-d]=arr[i];
     }
-    for(int i=n-d;i>=0;i--){
+    for(int i=n-d;i<n;i++){
         arr[i]=temp[i-(n-d)];
     }
     for(int i=0;i<n;i++){

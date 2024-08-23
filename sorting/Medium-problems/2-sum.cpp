@@ -12,5 +12,13 @@ int main(){
     }
     cout<<"Enter sum:";
     cin>>sum;
-    
+    map<int,int>mpp;
+    for(int i=0;i<n;i++){
+        int target=sum-arr[i];
+        if(mpp.find(target)!=mpp.end()){
+            cout<<"Indexes:"<<mpp[target]<<","<<i<<endl;
+             cout<<"Numbers:"<<target<<","<<sum-target<<endl;
+        }
+       mpp[arr[i]]=i;
+    }
     }

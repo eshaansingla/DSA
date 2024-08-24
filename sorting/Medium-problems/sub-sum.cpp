@@ -24,12 +24,24 @@ int main(){
     cout<<maxi<<endl;
     */
    //optimal
-   sum=0;
+  sum = 0;
+  int start = 0;
+  int end = 0;
+  int ansst = 0;
    int maxi=INT_MIN;
    for(int i=0;i<n;i++){
     sum+=arr[i];
     maxi=max(maxi,sum);
-    if(sum<0) sum=0;
+    if(sum<0){ 
+        sum=0;
+        ansst=i+1;
+        }
+    else if(sum>0){
+        start=ansst;
+        end=i;
+    }
+    else ansst=i;
    }
+    for(int i=start;i<=end;i++) cout<<arr[i]<<endl;
     cout<<maxi<<endl;
 }

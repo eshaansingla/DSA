@@ -46,16 +46,31 @@ int main(){
 }
     */
 //optimal
+vector<vector<int>> generate(int numRows) {
+    int ans=1;
+    vector<int>v;
+    vector<vector<int>>sol;
+    for(int j=1;j<=numRows;j++){
+    for(int i=1;i<=j;i++){
+    v.push_back(ans);
+    ans=(ans*(j-i))/i;
+}
+    sol.push_back(v);
+    v.clear();
+    ans=1;
+    }
+    return sol;
+    }
 int main(){
-int ans=1;
-int row,column;
+int row;
 cout<<"Enter the row number:";
 cin>>row;
-column=row;
-cout<<1<<" ";
-for(int i=1;i<column;i++){
-    ans=(ans*(row-i))/i;
-    cout<<ans<<" ";
+vector<vector<int>>answer=generate(row);
+for(int i=0;i<answer.size();i++){
+    for(int j=0;j<answer[i].size();j++){
+        cout<<answer[i][j]<<" ";
+    }
+    cout<<endl;
 }
 }
 

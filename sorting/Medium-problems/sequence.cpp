@@ -41,4 +41,5 @@ int main(){
                 longestStreak = max(longestStreak, currentStreak);
             }
         }
+        cout<<longestStreak<<endl;
     }

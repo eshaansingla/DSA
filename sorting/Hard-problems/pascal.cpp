@@ -60,7 +60,9 @@ vector<vector<int>> generate(int numRows) {
     ans=1;
     }
     return sol;
-    }
+    
+}
+
 int main(){
 int row;
 cout<<"Enter the row number:";

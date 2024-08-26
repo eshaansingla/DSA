@@ -33,23 +33,29 @@ vector<vector<int>> generate(int numRows) {
         }
         return ans;
     }
-    */
-   void rowoptimal(){
-    int row,column;
-    cout<<"Enter row:";
-    cin>>row;
-    column=row;
-}
-
+    
 int main(){
     int row,column;
     cout<<"Enter number of rows:";
     cin>>row;
     cout<<"Enter number of columns:";
     cin>>column;
-    //cout<<"THE ELEMENT IS: "<<myf(row,column)<<endl;
-    //rowprinter();
-    //vector<vector<int>>Arrayrows=generate(row);
-
-
+    cout<<"THE ELEMENT IS: "<<myf(row,column)<<endl;
+    rowprinter();
+    vector<vector<int>>Arrayrows=generate(row);
 }
+    */
+//optimal
+int main(){
+int ans=1;
+int row,column;
+cout<<"Enter the row number:";
+cin>>row;
+column=row;
+cout<<1<<" ";
+for(int i=1;i<column;i++){
+    ans=(ans*(row-i))/i;
+    cout<<ans<<" ";
+}
+}
+

@@ -80,7 +80,7 @@ int main(){
                     if(sum>target) l--;
                     else if(sum<target) k++;
                     else{
-                        ans.push_back({nums[i],nums[j],nums[i],nums[i]});
+                        ans.push_back({nums[i],nums[j],nums[k],nums[l]});
                         l--;
                         k++;
                         while(l>k && nums[l]==nums[l+1]) l--;

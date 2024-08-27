@@ -38,4 +38,31 @@ int main(){
             cout<<endl;
         }
     */
+   //better
+   /*int sum2;
+   int f;
+   set<vector<int>>st;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+        set<int>st1;
+            for(int k=j+1;k<n;k++){
+                    sum2=nums[i]+nums[j]+nums[k];
+                    f=target-sum2;
+                    if(st1.find(f)!=st1.end()){
+                        vector<int>temp={nums[i],nums[j],nums[k],f};
+                        sort(temp.begin(),temp.end());
+                        st.insert(temp);
+                    }
+                    st1.insert(nums[k]);
+    }
+    }
+    }
+    vector<vector<int>>ans(st.begin(),st.end());
+    for(int i=0;i<ans.size();i++){
+            for(int p=0;p<4;p++){
+                cout<<ans[i][p]<<",";
+            }
+            cout<<endl;
+        }
+        */
 }

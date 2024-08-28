@@ -12,4 +12,5 @@ for(int i=0;i<2*n-1;i++){
          }
          cout<<endl;
 }
+cout<<endl<<endl<<"Code exited sucessfully";
 }

@@ -32,8 +32,8 @@ int main(){
     int n;
     cout<<"Enter n:";
     cin>>n;
-    vector<int>nums={4,5,9,11,23,27,35,38,45,47,49};
-    int target=21;
+    vector<int>nums(n);
+    int target;
     for(int i=0;i<n;i++){
        cout<<"Enter a number:";
        cin>>nums[i];

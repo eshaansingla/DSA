@@ -24,8 +24,35 @@ using namespace std;
         else return {-1,-1};
    }*/
 
-   //optimal mkae fxns for lower and upper bound separately and calculate.
-
+   //optimal 
+   int left(vector<int>& nums, int target,int low,int high){
+    int mid;
+    int ans=-1;
+    while(low<=high){
+        mid=low+ (high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+            high=mid-1;
+        }
+        else if(nums[mid]<target) low=mid+1;
+        else high=mid-1;
+    }
+    return ans;
+   }
+   int right(vector<int>& nums, int target,int low,int high){
+    int mid;
+    int ans=-1;
+    while(low<=high){
+        mid=low+ (high-low)/2;
+        if(nums[mid]==target){
+            ans=mid;
+            low=mid+1;
+        }
+        else if(nums[mid]<target) low=mid+1;
+        else high=mid-1;
+    }
+    return ans;
+   }
     int main(){
     int n;
     cout<<"Enter n:";
@@ -40,4 +67,8 @@ using namespace std;
     cin>>target;
     //vector<int>sol=searchRange(nums,target);
     //for(auto it:sol) cout<<it<<" ";
+    int l=left(nums,target,0,n-1);
+    if(l==-1) cout<<-1<<","<<-1;
+    int u=right(nums,target,0,n-1);
+    cout<<l<<","<<u;
     }

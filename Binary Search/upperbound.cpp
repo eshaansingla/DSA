@@ -6,12 +6,11 @@ int mid;
 if(low>=high) return -1;
 while(low<=high){
 mid=low + (high-low)/2;
-if(nums[mid]<target){ 
-    ans=mid;
+if(nums[mid]<=target){ 
     low=mid+1;
-    break;
 }
 else{
+    ans=mid;
     high=mid-1;
 }
 }

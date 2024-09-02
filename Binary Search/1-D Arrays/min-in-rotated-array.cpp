@@ -12,7 +12,6 @@ int mincal(vector<int>& nums,int low,int high){
         else{
             high=mid-1;
             mini=min(nums[mid],mini);
-            
         }
     }
     return mini;

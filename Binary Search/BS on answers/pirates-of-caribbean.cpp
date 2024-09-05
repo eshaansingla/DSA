@@ -17,20 +17,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 long long sumation(vector<int>& weights, int cap){
-   int days = 1; 
-    int load = 0;
-    int n = weights.size(); 
-    for (int i = 0; i < n; i++) {
-        if (load + weights[i] > cap) {
-            days += 1; 
-            load = weights[i]; 
+    int n=weights.size();
+        int days=1;
+        int load=0;
+        for(int i=0;i<weights.size();i++){
+            if(load+weights[i]>cap){
+                days++;
+                load=weights[i];
+            }
+            else load+=weights[i];
         }
-        else {
-           
-            load += weights[i];
-        }
-    }
-    return days;
+        return days;
 }
     int shipWithinDays(vector<int>& weights, int days) {
         int n=weights.size();
@@ -46,7 +43,16 @@ long long sumation(vector<int>& weights, int cap){
         return low;
     }
 int main(){
-vector<int>weights={1,2,3,5,4,6,5,7,9,8,8,2,10};
-int days=10;
-cout<<shipWithinDays(weights,days)<<endl;
+    int n;
+    cout<<"Enter number of weights:";
+    cin>>n;
+vector<int>weights(n);
+for(int i=0;i<n;i++){
+     cout<<"Enter weight:";
+    cin>>weights[i];
+}
+int days;
+cout<<"Enter the number of days:";
+cin>>days;
+cout<<"Min capacity:"<<shipWithinDays(weights,days)<<endl;
 }

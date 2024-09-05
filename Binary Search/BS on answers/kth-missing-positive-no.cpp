@@ -28,9 +28,10 @@ int main(){
     while(low<=high){
         int mid= low + (high-low)/2;
         int missing=arr[mid]-mid-1;
-        if(missing>mid) high=mid-1;
+        if(missing>k) high=mid-1;
         else low=mid+1;
     }
-    cout<<low+k<<endl;
+    cout<<k+high+1<<endl;
     // this code fails for size =1,2 and some cases of others. :(
-}
+} 
+

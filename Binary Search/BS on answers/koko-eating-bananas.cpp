@@ -15,24 +15,21 @@ long long banana(vector<int>& piles, int h){
     int minEatingSpeed(vector<int>& piles, int h) {
     int total=0;
     int n=piles.size();
-    sort(piles.begin(),piles.end());
     int low=1;
     int high=*max_element(piles.begin(), piles.end());
     int mid;
     long long hours;
-    int res=high;
     while(high>=low){
         mid=low + (high-low)/2;
         hours=banana(piles,mid);
         if(h>=hours){
              high=mid-1;
-             res=mid;
              }
         else {
             low=mid+1;
             }
     }
-    return res;
+    return low;
     }
 int main(){
     vector<int>v={3,4,5,6,7};

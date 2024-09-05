@@ -66,7 +66,6 @@ int main(){
         }
         */
     //optimal
-       int target;
        vector<vector<int>>ans;
        sort(nums,nums+n);
        for(int i=0;i<n;i++){

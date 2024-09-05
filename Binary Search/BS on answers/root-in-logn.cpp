@@ -16,8 +16,8 @@ int main(){
        }
        cout<<product<<endl;
     */
-   //optimal
 
+   //optimal
        int low=1;
        int high=x;
        long long mid;

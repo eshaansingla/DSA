@@ -131,6 +131,31 @@ class Node{
        if(pal==1) cout<<"Pali"<<endl;
        else cout<<"Not Pali"<<endl;
     }
+    Node* evenodd(Node*head){
+        int arr[9];
+        Node*temp=head;
+        Node*ans=head;
+        Node*temp1=head;
+        int i=0;
+        while(temp && temp->next){
+            arr[i]=temp->data;
+            i++;
+            temp=temp->next->next;
+            }
+        temp1=temp1->next;
+        while(temp1 && temp1->next){
+            arr[i]=temp1->data;
+            i++;
+            temp1=temp1->next->next;
+            }
+        int j=0;
+        while(ans){
+            ans->data=arr[j];
+            j++;
+            ans=ans->next;
+        }
+        return ans;
+    }
 };
 int main(){
 Node*p=new Node(5);
@@ -165,8 +190,9 @@ pal->next->next=new Node(3);
 //pal->next->next->next->next->next=new Node(1);
 pal->next->next->next=new Node(2);
 pal->next->next->next->next=new Node(1);
+//pal->print(pal);
+//pal->pali(pal);
+//pal->print(pal);
+pal=pal->evenodd(pal);
 pal->print(pal);
-pal->pali(pal);
-pal->print(pal);
-pal->pali(p);
 }

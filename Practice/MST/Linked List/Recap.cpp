@@ -145,7 +145,68 @@ class Node{
         odd->next=even1;
         return head;
     }
-    
+    Node*delkfromlast(Node*head,int k){
+        Node*fast=head;
+        Node*slow=head;
+        if(head==nullptr) return head;
+        if(head->next==nullptr) return head->next;
+        for(int i=0;i<k;i++) fast=fast->next;
+        if(fast==nullptr) return head->next;
+        while(fast->next){
+            slow=slow->next;
+            fast=fast->next;
+        }
+        Node*delnode=slow->next;
+        slow->next=slow->next->next;
+        delete delnode;
+        return head;
+    }
+    Node*delmiddle(Node*head){
+        if(head==nullptr) return head;
+        if(head->next==nullptr) {
+            delete head;
+            return nullptr;
+            }
+        Node*slow=head;
+        Node*fast=head;
+        Node*prev=head;
+        while(fast && fast->next){
+            prev=slow;
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        Node*delnode=prev->next;
+        prev->next=prev->next->next;
+        delete delnode;
+        return head;
+    }
+    Node*intersection(Node*h1,Node*h2){
+        Node*t1=h1;
+        Node*t2=h2;
+        int cnt1=0,cnt2=0;
+        while(t1){
+            cnt1++;
+            t1=t1->next;
+        }
+        while(t2){
+            cnt2++;
+            t2=t2->next;
+        }
+        t1=h1;
+        t2=h2;
+        if((cnt1-cnt2)<0 && t1!=nullptr){
+            for(int i=0;i<cnt2-cnt1;i++) t2=t2->next;
+        }
+        else if(t2!=nullptr &&(cnt1-cnt2)>0) {
+            for(int i=0;i<cnt1-cnt2;i++) t1=t1->next;
+        }
+        while(t1 && t2){
+            if(t1==t2) return t1;
+            t2=t2->next;
+            t1=t1->next;
+        }
+        return nullptr;
+    }
 };
 int main(){
 Node*p=new Node(5);
@@ -175,16 +236,36 @@ p->detectloop(p);*/
 Node*pal=new Node(1);
 pal->next=new Node(2);
 pal->next->next=new Node(3);
-//pal->next->next->next=new Node(3);
-//pal->next->next->next->next=new Node(2);
-//pal->next->next->next->next->next=new Node(1);
-pal->next->next->next=new Node(2);
-pal->next->next->next->next=new Node(1);
+pal->next->next->next=new Node(3);
+pal->next->next->next->next=new Node(2);
+pal->next->next->next->next->next=new Node(1);
+//pal->next->next->next=new Node(2);
+//pal->next->next->next->next=new Node(1);
 //pal->print(pal);
 //pal->pali(pal);
 //pal->print(pal);
 //pal=pal->evenodd(pal);
 //pal->print(pal);
-Node*oe=oe->evenodd(p);
-oe->print(oe);
+//Node*oe=oe->evenodd(p);
+//oe->print(oe);
+//cout<<endl;
+//oe->delkfromlast(oe,4);
+//oe->print(oe);
+//pal->delmiddle(pal);
+//pal->print(pal);
+//cout<<endl;
+// Node *int1=new Node(1);
+// int1->next=new Node(2);
+// int1->next->next=new Node(6);
+// int1->next->next->next=new Node(5);
+// int1->next->next->next->next=new Node(4);
+// int1->next->next->next->next->next=new Node(7);
+// int1->next->next->next->next->next->next=new Node(3);
+// Node *int2=new Node(20);
+// int2->next=new Node(25);
+// int2->next->next=new Node(36);
+// int2->next->next->next=new Node(50,int1->next->next);
+// Node*internode=p->intersection(int1,int2);
+// internode->print(internode);
+
 }

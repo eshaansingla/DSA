@@ -75,7 +75,7 @@ mergesort(a,mid+1,high);
 merge(a,low,mid,high);
 }
 int partition(int *a,int low,int high){
-int pivot=a[low];
+int pivot=a[high];
 int i=low;
 int j=high;
 while(i<j){
@@ -87,10 +87,10 @@ while(i<j){
         a[j]=temp;
     }
 }
- int temp=a[low];
-    a[low]=a[j];
-    a[j]=temp;
-    return j;
+ int temp=a[high];
+    a[high]=a[i];
+    a[i]=temp;
+    return i;
 }
 void qs(int *a,int low,int high){
 if(low>=high){

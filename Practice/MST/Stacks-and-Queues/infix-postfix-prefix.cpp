@@ -325,5 +325,5 @@ int main()
     // posttoinf(st,ch2,ans);
     // pretoinf(st,ch3,ans);
     // posttopre(st,ch2,ans);
-    pretopost(st, ch4, ans);
+    // pretopost(st, ch4, ans);
 }

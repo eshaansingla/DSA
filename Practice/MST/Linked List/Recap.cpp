@@ -8,7 +8,7 @@ class Node{
         this->data=data;
         this->next=nullptr;
     }
-     Node(int data,Node*next){
+    Node(int data,Node*next){
         this->data=data;
         this->next=next;
     }
@@ -61,7 +61,7 @@ class Node{
     void middle(Node*head){
         Node*slow=head;
         Node*fast=head;
-        while(fast && fast->next){
+        while(fast && fast->next->next){
             fast=fast->next->next;
             slow=slow->next;
         }
@@ -236,7 +236,7 @@ p->detectloop(p);*/
 Node*pal=new Node(1);
 pal->next=new Node(2);
 pal->next->next=new Node(3);
-pal->next->next->next=new Node(3);
+pal->next->next->next=new Node(5);
 pal->next->next->next->next=new Node(2);
 pal->next->next->next->next->next=new Node(1);
 //pal->next->next->next=new Node(2);
@@ -267,5 +267,5 @@ pal->next->next->next->next->next=new Node(1);
 // int2->next->next->next=new Node(50,int1->next->next);
 // Node*internode=p->intersection(int1,int2);
 // internode->print(internode);
-
+pal->middle(pal);
 }

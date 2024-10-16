@@ -29,6 +29,26 @@ void inorder(Node*head){
     cout<<head->data<<" ";
     inorder(head->right);
 }
+ vector<vector<int>> levelOrder(Node* root) {
+        vector<vector<int>>saul;
+        queue<Node*>q;
+        if(root){
+            q.push(root);
+        }
+        while(!q.empty()){
+            vector<int>out;
+            int s=q.size();
+            for(int i=0;i<s;i++){
+                Node*temp=q.front();
+                if(temp->left) q.push(temp->left);
+                if(temp->right) q.push(temp->right);
+                out.push_back(temp->data);
+                q.pop();
+            }
+            saul.push_back(out);
+        }
+        return saul;
+    }
 int main(){
 Node*root=new Node(1);
 root->left=new Node(2);
@@ -40,5 +60,18 @@ root->right->left=new Node(7);
 root->right->right=new Node(8);
 root->right->right->left=new Node(9);
 root->right->right->right=new Node(10);
+preorder(root);
+cout<<endl;
 inorder(root);
+cout<<endl;
+postorder(root);
+cout<<endl;
+vector<vector<int>>v=levelOrder(root);
+int i=0;
+for(auto it:v){
+    for(auto it1:it){
+        cout<<it1<<" ";
+    }
+    cout<<endl;
+}
 }

@@ -29,6 +29,20 @@ void inorder(Node*head){
     cout<<head->data<<" ";
     inorder(head->right);
 }
+void preorderIterative(Node*root){
+    stack<Node*>st;
+    vector<int>ans;
+    if(!root) return;
+    else if(root) st.push(root);
+    while(!st.empty()){
+        Node*temp=st.top();
+        st.pop();
+        ans.push_back(temp->data);
+        if(temp->right) st.push(temp->right);
+        if(temp->left) st.push(temp->left);
+    }
+    for(auto it:ans) cout<<it<<" ";
+}
  vector<vector<int>> levelOrder(Node* root) {
         vector<vector<int>>saul;
         queue<Node*>q;
@@ -74,4 +88,5 @@ for(auto it:v){
     }
     cout<<endl;
 }
+preorderIterative(root);
 }

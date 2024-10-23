@@ -17,14 +17,14 @@ int maxDepth(Node* root) {
         int r=maxDepth(root->right);
         return 1+max(l,r);
     }
- int diameter(Node* root,int &maxi){
+int diameter(Node* root,int &maxi){
         if(!root) return 0;
         int lh=diameter(root->left,maxi);
         int rh=diameter(root->right,maxi);
         maxi = max(maxi, lh + rh);
         return 1+max(lh,rh);
     }
-    void diameterOfBinaryTree(Node* root) {
+void diameterOfBinaryTree(Node* root){
         int maxi=0;
         if(!root) return;
         diameter(root,maxi);
@@ -39,9 +39,30 @@ int check(Node*root){
         if(abs(lh-rh)>1) return -1;
         return 1+max(lh,rh);
     }
-    void isBalanced(Node* root) {
+void isBalanced(Node* root) {
         if(check(root)!=-1) cout<<"Balanced"<<endl;
         else cout<<"Not Balanced"<<endl;
+    }
+int calculate(Node*root,int &maxi){
+        if(!root){
+            return 0;
+        }
+        int lv=max(0,calculate(root->left,maxi));
+        int rv=max(0,calculate(root->right,maxi));
+        maxi=max(maxi,root->data+lv+rv);
+        return root->data+max(lv,rv);
+    }
+int maxPathSum(Node* root) {
+        int maxi=INT_MIN;
+        calculate(root,maxi);
+        return maxi;
+    }
+bool isSameTree(Node* p, Node* q) {
+        if(!p && !q) return true;
+        if(!p || !q) return false;
+        return (p->data==q->data) 
+        && isSameTree(p->left,q->left) 
+        && isSameTree(p->right,q->right);
     }
 int main(){
 Node*root=new Node(1);
@@ -57,4 +78,7 @@ root->right->right->right=new Node(10);
 cout<<maxDepth(root)<<endl;
 isBalanced(root);
 diameterOfBinaryTree(root);
+cout<<endl;
+cout<<maxPathSum(root)<<endl;
+cout<<isSameTree(root,root)<<endl;
 }

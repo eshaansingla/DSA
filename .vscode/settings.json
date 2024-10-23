@@ -17,6 +17,9 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "numeric": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp"
     }
 }

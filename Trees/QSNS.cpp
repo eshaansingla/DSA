@@ -64,6 +64,31 @@ bool isSameTree(Node* p, Node* q) {
         && isSameTree(p->left,q->left) 
         && isSameTree(p->right,q->right);
     }
+vector<vector<int>> zigzagLevelOrder(Node* root) {
+        vector<vector<int>>saul;
+        queue<Node*>q;
+        if(root){
+            q.push(root);
+        }
+        bool flag=0;
+        while(!q.empty()){
+            int s=q.size();
+            vector<int>out;
+            for(int i=0;i<s;i++){
+                Node*temp=q.front();
+                out.push_back(temp->data);
+                if(temp->left) q.push(temp->left);
+                if(temp->right) q.push(temp->right);
+                q.pop();
+            }
+        if(flag){
+            reverse(out.begin(),out.end());
+        }
+        saul.emplace_back(out);
+        flag = !flag;
+        }
+        return saul;
+    }
 int main(){
 Node*root=new Node(1);
 root->left=new Node(2);
@@ -80,5 +105,12 @@ isBalanced(root);
 diameterOfBinaryTree(root);
 cout<<endl;
 cout<<maxPathSum(root)<<endl;
-cout<<isSameTree(root,root)<<endl;
+cout<<isSameTree(root,root)<<endl<<endl;
+vector<vector<int>>v=zigzagLevelOrder(root);
+for(auto it:v){
+    for(auto it1:it){
+        cout<<it1<<" ";
+    }
+    cout<<endl;
+}
 }

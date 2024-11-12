@@ -1,5 +1,50 @@
 #include<bits/stdc++.h>
 using namespace std;
+class Heap{
+    public:
+        int arr[100];
+        int size;
+    Heap(){
+        size=0;
+    }
+    void insert(int x){
+        size++;
+        arr[size]=x;
+        int index=size;
+        while(index>=1){
+            int parent=index/2;
+            if(arr[parent]<arr[index]){
+                swap(arr[parent],arr[index]);
+                index=parent;
+            }
+            else return;
+        }
+    }
+    void print(){
+        for(int i=1;i<=size;i++) cout<<arr[i]<<" ";
+        cout<<endl;
+    }
+    void pop(){
+        swap(arr[1],arr[size]);
+        size--;
+        int i=1;
+        while(i<=size){
+            int l=2*i;
+            int r=2*i+1;
+            if(arr[i]<arr[l] && l<=size && arr[l]>arr[r]){
+                swap(arr[i],arr[l]);
+                i=l;
+            }
+            if(arr[i]<arr[r] && r<=size && arr[l]<arr[r]){
+                swap(arr[i],arr[r]);
+                i=r;
+            }
+            else{
+                return;
+            }
+        }
+    }
+};
 void Heapify(int arr[],int n,int i){
         int largest=i;
         int left;
@@ -36,8 +81,13 @@ void HeapSort(int arr[],int n){
 }
 
 int main(){
-int arr[]={53,55,45,54,36,89,59};
+int arr[]={54,55,52,53,50};
     int n=sizeof(arr)/sizeof(arr[0]);
-    HeapSort(arr,n);
-    print(arr,n);
+    //HeapSort(arr,n);
+    //print(arr,n);
+    Heap *h=new Heap();
+    for(int i=0;i<n;i++) h->insert(arr[i]);
+    h->print();
+    h->pop();
+    h->print();
 }

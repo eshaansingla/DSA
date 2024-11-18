@@ -9,8 +9,7 @@ struct Process {
 };
 // Comparator to sort processes by arrival time, then priority
 bool compareByArrivalAndPriority(const Process &a, const Process &b) {
-    if (a.arrival == b.arrival)
-        return a.priority < b.priority; // Lower priority number comes first
+    if (a.arrival == b.arrival) return a.priority < b.priority; // Lower priority number comes first
     return a.arrival < b.arrival;
 }
 void calculateTimes(vector<Process> &processes) {
@@ -24,19 +23,24 @@ void calculateTimes(vector<Process> &processes) {
         process.completion = currentTime + process.burst;
         process.turnaround = process.completion - process.arrival;
         process.waiting = process.turnaround - process.burst;
-
         currentTime = process.completion; // Update current time
     }
 }
 void printProcesses(const vector<Process> &processes) {
+    float avgtat=0,avgwt=0;
+    int n=0;
     cout << "\nPID\tArrival\tBurst\tPriority\tCompletion\tTurnaround\tWaiting\n";
     for (const auto &process : processes) {
+        n++;
+        avgtat+=process.turnaround;
+        avgwt+=process.waiting;
         cout << process.pid << "\t" << process.arrival << "\t" 
              << process.burst << "\t" << process.priority << "\t\t" 
              << process.completion << "\t\t" 
              << process.turnaround << "\t\t" 
              << process.waiting << "\n";
     }
+    cout<<endl<<"Average Waiting Time: "<<avgwt/n<<endl<<"Average Turn Around Time: "<<avgtat/n<<endl;
 }
 int main() {
     int n;

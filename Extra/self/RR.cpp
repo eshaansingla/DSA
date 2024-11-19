@@ -78,3 +78,33 @@ cout << "\nPid\tArrival\tBurst\tCompletion\tTAT\tWaiting\n";
     cout<<"Average Waiting Time: "<<avgwt/n<<endl;
     cout<<"Average Turn Around Time: "<<avgtat/n<<endl;
 }
+/*while(completed!=n){
+for(int i=0;i<n;i++){
+    if(processes[i].rem>0 && !inqueue[i] && processes[i].arrival<=curtime){
+        ready.push(i);
+        inqueue[i]=true;
+    }
+}
+    if(!ready.empty()){
+        int idx=ready.front();
+        ready.pop();
+        inqueue[idx]=false;
+        int exec=min(tq,processes[idx].rem);
+        processes[idx].rem-=exec;
+        curtime+=exec;
+        if(processes[idx].rem==0){
+            processes[idx].comp=curtime;
+            processes[idx].tat=processes[idx].comp-processes[idx].arrival;
+            processes[idx].wt=processes[idx].tat-processes[idx].burst;
+            completed++;
+        }
+        else{
+            ready.push(idx);
+            inqueue[idx]=true;
+        }
+
+    }
+    else{
+            curtime++;
+        }
+}*/

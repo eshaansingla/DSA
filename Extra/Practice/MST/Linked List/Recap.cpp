@@ -268,4 +268,6 @@ pal->next->next->next->next->next=new Node(1);
 // Node*internode=p->intersection(int1,int2);
 // internode->print(internode);
 pal->middle(pal);
+pal=pal->reverse(pal);
+pal->print(pal);
 }

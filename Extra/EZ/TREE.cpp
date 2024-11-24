@@ -95,6 +95,19 @@ else if(root->data>val){
 }
 else root->right=deletefromBST(root->right,val);
 }
+bool checkBST(Node*root,long long minvl,long long maxvl){
+if(!root) return true;
+if(root->data<=minvl || root->data>=maxvl) return false;
+return checkBST(root->left,minvl,root->data) && checkBST(root->right,root->data,maxvl);
+}
+Node* intoBSTHelper(vector<int>& nums, int low, int high) {
+    if (low > high) return nullptr;
+    int mid = low + (high - low) / 2;
+    Node* root = new Node(nums[mid]);
+    root->left = intoBSTHelper(nums, low, mid - 1);  // Recursively build left subtree
+    root->right = intoBSTHelper(nums, mid + 1, high);  // Recursively build right subtree
+    return root;
+}
 int main(){
 Node*Tree=nullptr;
 Tree=insert(Tree,6);
@@ -104,9 +117,12 @@ Tree=insert(Tree,8);
 Tree=insert(Tree,4);
 Tree=insert(Tree,2);
 Tree=insert(Tree,0);
-print(Tree);
+//print(Tree);
 //minmaxval(Tree);
 Tree=deletefromBST(Tree,9);
 cout<<"**********"<<endl;
-print(Tree);
+//print(Tree);
+vector<int>nums={10,20,30,100,150,200,300};
+Node*inord=intoBSTHelper(nums,0,6);
+print(inord);
 }

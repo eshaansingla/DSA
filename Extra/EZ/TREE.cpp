@@ -108,6 +108,17 @@ Node* intoBSTHelper(vector<int>& nums, int low, int high) {
     root->right = intoBSTHelper(nums, mid + 1, high);  // Recursively build right subtree
     return root;
 }
+void Heapify(vector<int>&arr,int n,int i){
+int largest=i;
+int left=2*i;
+int right=2*i+1;
+if(arr[left]<arr[largest] && left<=n) largest=left;
+if(arr[right]<arr[largest] && right<=n) largest=right;
+if(i!=largest){
+    swap(arr[i],arr[largest]);
+    Heapify(arr,n,largest);
+}
+}
 int main(){
 Node*Tree=nullptr;
 Tree=insert(Tree,6);
@@ -124,5 +135,12 @@ cout<<"**********"<<endl;
 //print(Tree);
 vector<int>nums={10,20,30,100,150,200,300};
 Node*inord=intoBSTHelper(nums,0,6);
-print(inord);
+//print(inord);
+vector<int>arr={-1,56,55,57,59,60,58,61,62};
+int n=arr.size();
+for(int i=(n-1)/2;i>0;i--){
+    swap(arr[0],arr[i]);
+     Heapify(arr,n,i);
+     }
+for(int i=1;i<n;i++) cout<<arr[i]<<endl;
 }

@@ -93,6 +93,87 @@ for(auto it:adj){
     }
 }
 }
+bool loopdetectionDFS(unordered_map<T,bool>&vis,unordered_map<T,bool>&dfsvis,T var){
+vis[var]=true;
+dfsvis[var]=true;
+for(auto it:adj[var]){
+   if(!vis[it]){
+     if(loopdetectionDFS(vis,dfsvis,it)) return true;
+    }
+   else if(dfsvis[it]){
+        return true;
+   }
+}
+dfsvis[var]=false;
+return false;
+}
+void directedloopDFS(){
+unordered_map<T,bool>vis;
+unordered_map<T,bool>dfsvis;
+for(auto it:adj){
+if(!vis[it.first]){
+    if(loopdetectionDFS(vis,dfsvis,it.first)){
+        cout<<"LOOOOOP"<<endl;
+        return;
+    }
+    }
+}
+cout<<"No loop found."<<endl;
+}
+void topowithDFS(T node,stack<T>&st,map<T,bool>&mpp,vector<int>&ans){
+mpp[node]=1;
+ans.emplace_back(node);
+for(auto it:adj[node]){
+   if(!mpp[it]) topowithDFS(it,st,mpp,ans);
+}
+st.push(node);
+}
+void toposort(T node){
+    stack<T>st;
+    vector<T>ans;
+    map<T,bool>mpp;
+    for(auto it:adj){
+        if(!mpp[it.first]){
+            topowithDFS(it.first,st,mpp,ans);
+        }
+    }
+    for(auto it:ans) cout<<it<<endl;
+    cout<<"STACK elements: ";
+    while(!st.empty()){
+        cout<<st.top()<<" ";
+        st.pop();
+    }
+}
+void KahnAlgo(){
+    map<T,int>indegree;
+    queue<T>q;
+    vector<T>ans;
+    for(auto it:adj){
+        for(auto it1:it.second){
+            indegree[it1]++;
+        }
+    }
+    for(auto it:adj){
+        if(indegree[it.first]==0) q.push(it.first);
+    }
+    while(!q.empty()){
+        auto front=q.front();
+        q.pop();
+        ans.emplace_back(front);
+        for(auto i:adj[front]){
+            indegree[i]--;
+            if(indegree[i]==0){
+                q.push(i);
+            }
+        }
+    }
+    if(ans.size()!=adj.size()){
+        cout<<"LO_OP F0UND"<<endl;
+        return;
+    }
+    cout<<"Now pritning the Toposort vector: "<<endl;
+    for(auto it:ans) cout<<it<<" ";
+}
 };
 int main(){
 Graph<int>gr;
@@ -107,12 +188,17 @@ for(int i=0;i<n;i++){
     int d;
     cout<<"Enter vertices: ";
     cin>>v>>u;
-    gr.add(u,v,0);
+    gr.add(v,u,1);
 }
+/*
 gr.print();
 gr.BFStrav(2);
 cout<<endl;
 gr.DFStrav(2);
 cout<<endl;
 gr.loopdetection();
+cout<<endl;
+gr.toposort(2);*/
+gr.print();
+gr.KahnAlgo();
 }

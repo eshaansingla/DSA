@@ -23,5 +23,5 @@
         "limits": "cpp",
         "condition_variable": "cpp",
         "*.tcc": "cpp"
-    }
+    },
 }

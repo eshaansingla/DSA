@@ -24,4 +24,5 @@
         "condition_variable": "cpp",
         "*.tcc": "cpp"
     },
+    "editor.fontFamily": "'Source Code Pro'"
 }

@@ -50,27 +50,16 @@ class Graph{
                     }
                     distance[it.first]=nodedis+it.second;
                     st.insert({distance[it.first],it.first});
-                }
-            }
+                }}
         }
     }
-};
+    };
 int main(){
 Graph<int>g;
-    g.Adj(0, 1, 4);
-    g.Adj(0, 7, 8);
-    g.Adj(1, 2, 8);
-    g.Adj(1, 7, 11);
-    g.Adj(2, 3, 7);
-    g.Adj(2, 8, 2);
-    g.Adj(2, 5, 4);
-    g.Adj(3, 4, 9);
-    g.Adj(3, 5, 14);
-    g.Adj(4, 5, 10);
-    g.Adj(5, 6, 2);
-    g.Adj(6, 7, 1);
-    g.Adj(6, 8, 6);
-    g.Adj(7, 8, 7);
+    g.Adj(0,1,2);
+    g.Adj(1,2,3);
+    g.Adj(0,3,6);
+    g.Adj(1,4,5);
     g.adjprint();
     // map<int,bool>visited;
     // stack<int>s;
@@ -80,11 +69,28 @@ Graph<int>g;
     //     g.dfs(visited,s,i);
     //     }
     // }
-    vector<int>ans;
-    vector<int>distance(9,INT_MAX);
-    //g.shortestPath(distance,visited,s,1);
-    set<pair<int,int>>st;
-    distance[0]=0;
-    g.Dijkstra(distance,st,1);
-    for(auto it:distance) cout<<it<<" ";
+//     vector<int>ans;
+//     vector<int>distance(4,INT_MAX);
+//     //g.shortestPath(distance,visited,s,1);
+//     set<pair<int,int>>st;
+//     distance[0]=0;
+//     vector<int>parent;
+//     vector<bool>mst(4,false);
+//     parent[0]=0;
+//     //g.Dijkstra(distance,st,1);
+//     g.Prim(distance, parent, mst);
+//   for (int i = 1; i < 4; i++) {
+//         if (parent[i] != -1) {
+//             cout << parent[i] << " - " << i << " : " << distance[i] << endl;
+//         }
+//     }
+ int n = g.mpp.size();
+    map<int,int>distance;
+    map<int,int> parent;
+    for(auto it:distance){
+        it.second=INT_MAX;
+    }
+    map<int,bool> mst;
+
+    for(auto it:parent) cout<<it.second<<endl;
 }

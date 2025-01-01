@@ -83,11 +83,11 @@ void HeapSort(int arr[],int n){
 int main(){
 int arr[]={54,55,52,53,50};
     int n=sizeof(arr)/sizeof(arr[0]);
-    //HeapSort(arr,n);
-    //print(arr,n);
+    HeapSort(arr,n);
+    print(arr,n);
     Heap *h=new Heap();
     for(int i=0;i<n;i++) h->insert(arr[i]);
-    h->print();
-    h->pop();
-    h->print();
+    // h->print();
+    // h->pop();
+    // h->print();
 }

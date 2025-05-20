@@ -88,5 +88,6 @@ int main()
         bin_word += encoder[it];
     }
     string decoded = decode(root, bin_word);
+    cout << bin_word << endl;
     cout << decoded << endl;
 }

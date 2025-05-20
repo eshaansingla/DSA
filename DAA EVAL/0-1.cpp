@@ -15,7 +15,7 @@ int main()
     int W = 7;
     vector<int> profit = {5, 3, 8, 6};
     vector<int> weight = {2, 3, 4, 5};
-    // cout << knapsack(0, profit, weight, W, profit.size(), 0);
+    cout << knapsack(0, profit, weight, W, profit.size(), 0);
     vector<vector<int>> dp(profit.size() + 1, vector<int>(W + 1, 0));
     for (int i = 1; i < profit.size() + 1; i++)
     {

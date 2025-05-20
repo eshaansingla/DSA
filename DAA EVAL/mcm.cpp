@@ -41,7 +41,7 @@ void mcm(vector<int> arr)
 }
 int main()
 {
-    vector<int> arr = {2, 1, 3, 4}; // Example input
+    vector<int> arr = {2, 1, 3, 4, 5, 6, 4}; // Example input
     mcm(arr);
     return 0;
 }

@@ -35,6 +35,7 @@ void graphColoring(vector<vector<int>> &graph, int m)
     vector<int> color(V, 0);
     if (!solver(graph, m, 0, color))
     {
+        cout << "NO SOLUTION" << endl;
     }
     else
     {
@@ -50,7 +51,7 @@ int main()
         {1, 1, 0, 1},
         {1, 0, 1, 0}};
 
-    int m = 3; // Number of colors
+    int m = 3;
     graphColoring(graph, m);
 
     return 0;

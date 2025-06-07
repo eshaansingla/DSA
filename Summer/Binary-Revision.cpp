@@ -120,6 +120,22 @@ void rotateArray(vector<int> &vec, int k)
     reverse(vec.begin() + k, vec.end());
     reverse(vec.begin(), vec.end());
 }
+int hcf(int a, int b)
+{
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+    if (a == b)
+        return a;
+    if (a > b)
+        return hcf(a - b, b);
+    return hcf(a, b - a);
+}
+int lcm(int a, int b)
+{
+    return a * b / hcf(a, b);
+}
 vector<int> addition(vector<int> &a, vector<int> &b)
 {
     vector<int> ans(max(a.size(), b.size()) + 1, 0);
@@ -212,4 +228,5 @@ int main()
         cout << it << " ";
     }
     cout << endl;
+    cout << lcm(5, 7) << " " << hcf(7, 5) << endl;
 }

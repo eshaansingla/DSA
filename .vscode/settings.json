@@ -22,7 +22,10 @@
         "random": "cpp",
         "limits": "cpp",
         "condition_variable": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "cstdlib": "cpp"
     },
     "editor.fontFamily": "Source Code Pro"
 }
